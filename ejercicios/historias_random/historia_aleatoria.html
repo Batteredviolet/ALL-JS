@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+
+<head>
+  <style>
+    body {
+      font-family: fantasy;
+      width: 350px;
+    }
+    label,
+    h1 {
+      font-weight: bold;
+    }
+    div {
+      padding-bottom: 20px;
+    }
+    input[type="text"] {
+      padding: 5px;
+      /* height:  */
+      width: 150px;
+    }
+    p {
+      background-color: dimgray;
+      color: aliceblue;
+      padding: 10px;
+      visibility: hidden;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Generador de hitórias absurdas</h1>
+  <form>
+    <div>
+      <label for="nick">Escribe tu nombre:</label>
+      <input type="text" id="nick" placeholder="Tu nickName" />
+    </div>
+    <div>
+      <label for="moto">Moto</label>
+      <input type="radio" id="moto" value="la moto" name="vehiculo" checked />
+      <label for="patinete">Patinete</label>
+      <input type="radio" id="patinete" value="el patinete" name="vehiculo" />
+    </div>
+    <div>
+      <button type="submit" class="aleatorio">Crear história aleatória</button>
+    </div>
+  </form>
+  <p class="historia"></p>
+
+  <script>
+    var nick = document.getElementById("nick");
+    var boton = document.querySelector(".aleatorio");
+    var his = document.querySelector(".historia");
+
+    var textHis =
+      "Cuando nick cogió  la moto partió a toda leche sin mirar y al cruzar la calle se chocó con un strAnimal, tras la conmoción inicial al recuperar el sentido y coger de nuevo la moto, se dió cuenta que le faltaba strPieza por lo que tuvo que ir andando strLugar.";
+
+    var strAnimal = ["pollo", "elefante", "chiwua-wua", "gato"];
+    var strPieza = ["una rueda", "el manillar", "dos frenos"];
+    var strLugar = ["al dentista", "a la playa", "a la peluqueria", "al bar"];
+
+    boton.addEventListener("click", function (event) {
+      event.preventDefault();
+      crearHistoria();
+    });
+
+    function crearHistoria() {
+      if (nick.value != "") {
+        var nuevaHis = textHis; //guardo la história en una nueva variable para no alterar la história original i no tner que refrescar la página para crear otra nueva.
+
+        //recojemos el contenido del campo de texto nick
+        var nuevoNick = nick.value;
+        //generamos las palabras aleat`roias desde los arrays y las huardamos en variables
+        var animal = palabraAleatoria(strAnimal);
+        var pieza = palabraAleatoria(strPieza);
+        var lugar = palabraAleatoria(strLugar);
+
+        nuevaHis = nuevaHis.replace("nick", nick.value.toLocaleUpperCase());
+        nuevaHis = nuevaHis.replace("strAnimal", animal);
+        nuevaHis = nuevaHis.replace("strPieza", pieza);
+        nuevaHis = nuevaHis.replace("strLugar", lugar);
+
+        //TODO - Seleccionar Vehículo;
+        //Crear un num random segun el length del array function(array){return algo};
+        //Seleccionar los items de los arrays segun el numero generado y reemplazarlos por los str... corrrespondientes de la nuevaHis.
+
+        if (document.getElementById("moto").checked) {
+          nuevaHis = nuevaHis.replace(/la moto/g, "la moto".toLowerCase());
+        } else {
+          nuevaHis = nuevaHis.replace(/la moto/g, function () {
+            return "el patinete".toLowerCase();
+          });
+        }
+
+        his.textContent = nuevaHis;
+        his.style.visibility = "visible";
+      } else {
+        alert("Introduce tu nick!!!!");
+      }
+    }
+
+    function palabraAleatoria(arrayStr) {
+      var na = Math.floor(Math.random() * arrayStr.length);
+      return arrayStr[na];
+    }
+  </script>
+</body>

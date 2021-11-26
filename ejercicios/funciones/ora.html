@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>O.R.A</title>
+  </head>
+  <body>
+    <script>
+      let importe = Number(prompt("Ingresa un importe: "));
+
+      while (importe < 30 || importe > 210) {
+        const msg =
+          importe < 30
+            ? "El minimo són 30 ctms, Ingresa otra cantidad"
+            : "El máximo són 210 ctms, , Ingresa otra cantidad";
+        importe = Number(prompt(msg));
+      }
+
+      alert("Puesdes estar aparcado " + importe + " minutos");
+    </script>
+  </body>
+</html>

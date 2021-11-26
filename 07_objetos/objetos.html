@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // const producto = new Object();
+      const nombre = "Microondas";
+      let precio = 300;
+      const disponible = true;
+      
+      precio = 600;
+
+      //Objeto literal
+      const producto = {
+        nombre: "Bicicleta",
+        precio: 200,
+        disponible: true,
+      };
+
+      const producto2 = {
+        nombre: "Patinete",
+        precio: 100,
+        disponible: false,
+      };
+
+      console.log(producto, producto2);
+
+      //acceder al valor de las propiedades
+      console.log(producto.nombre)
+      console.log(producto2.nombre)
+      
+    //   console.log(producto["nombre"])
+      producto2.color ="Rojo";
+      producto2.nombre = "Skate";
+      console.log(producto2)
+
+      const producto3 = producto2;
+      producto3.stock = 4;
+      console.log(producto2)
+
+      //eliminar propiedades
+      delete producto2.color;
+      
+
+
+    </script>
+  </body>
+</html>

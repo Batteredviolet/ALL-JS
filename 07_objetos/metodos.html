@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const producto = {
+        nombre: "Bicicleta",
+        precio: 200,
+        disponible: true,
+        mostrarInfo: function() {
+            return `El producto ${this.nombre} tiene un precio de ${precio}`;
+        }
+      };
+      console.log(producto.mostrarInfo());
+      producto.mostrarInfo();
+    </script>
+  </body>
+</html>

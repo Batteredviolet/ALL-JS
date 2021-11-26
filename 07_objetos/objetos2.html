@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const producto = {
+        nombre: "Bicicleta",
+        precio: 200,
+        disponible: true,
+        informacion: {
+            peso: '400g',
+            medidas: {
+                altura: 100,
+                ancho: 200
+            }
+        }
+      };
+    //   const tipoPropiedad = "datos";
+    //   producto[tipoPropiedad+1] = {year: 2021};
+      console.log(producto.informacion.peso)
+    //desestructurar objetos anidados
+    const {nombre, precio, informacion:{peso, medidas:{altura}}} = producto;
+    console.log(altura);
+
+    //Bloquear el objeto
+    Object.freeze( producto);
+    producto.nombre = "Cafetera";
+    console.log(producto)
+    </script>
+  </body>
+</html>

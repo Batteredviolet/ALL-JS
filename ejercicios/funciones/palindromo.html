@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Palindromos</title>
+  </head>
+  <body>
+    <script>
+      //Sin for
+      function isPalindromo(str = "") {
+        //filtramos espacios y convertimos a minusculas
+        //let strFiltered = str.replaceAll(" ", "").toLowerCase();
+        //Con regex
+        const reg = /[\W_]/g; // es equivalente a /[^A-Za-z0-9]/g;
+        const strFiltered = str.toLowerCase().replace(reg, "");
+
+        const strReversed = strFiltered.split("").reverse().join("");
+        console.log(strFiltered, strReversed);
+
+        return strFiltered === strReversed
+          ? "Es palíndromo"
+          : "No és palíndromo"; //es palindrmo?
+      }
+
+      console.log(isPalindromo("La ruta artificail"));
+      console.log(isPalindromo("La ruta natural"));
+
+      //Con el bucle for
+      function isPalindromo2(str) {
+        //Limpiamos el str
+        const reg = /[\W_]/g; // es equivalente a /[^A-Za-z0-9]/g;
+        const strFiltered = str.toLowerCase().replace(reg, "");
+
+        for (let i = 0; i < str.length / 2; i++) {
+          if (str[i] !== str[str.length - 1 - i]) {
+            return false;
+          }
+        }
+        return true;
+      }
+
+      console.log(isPalindromo2("1234321"));
+    </script>
+  </body>
+</html>

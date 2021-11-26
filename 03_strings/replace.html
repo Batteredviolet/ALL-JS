@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Reemplazar texto
+        const texto = "Hoy hace mucha calor y voy a la playa";
+        console.log(texto.replace("la playa", "el volcan"))
+        console.log(texto.slice(0, 4));
+
+        const nombre = "Toni"
+        console.log(nombre.charAt(0))
+
+        console.log(nombre.repeat(5))
+
+        //Repite el nombre 5 veces y muestralo por consola con un metodo de String
+        //quita los espacios de la frase texto
+        console.log(texto.replaceAll(" ", ""));
+        
+        //quita las comas y los espacios de: 
+        const colores = 'rojo, azul, verde, amarillo';
+        console.log(colores.split(", "))
+
+        //Convierte el nombre a mayúsculas
+        console.log(nombre.toUpperCase());
+
+        //convertir a numero
+        const edad = 25;
+        console.log(edad + 10);
+    </script>
+</body>
+</html>

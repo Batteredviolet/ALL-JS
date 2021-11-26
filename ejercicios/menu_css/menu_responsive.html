@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <nav>
+      <ul class="menu">
+        <li class="logo"><a href="#">Invisible App</a></li>
+        <li class="item"><a href="#">Home</a></li>
+        <li class="item"><a href="#">About</a></li>
+        <li class="item"><a href="#">Services</a></li>
+        <li class="item"><a href="#">Features</a></li>
+        <li class="item"><a href="#">Blog</a></li>
+        <li class="item"><a href="#">Contact</a></li>
+        <li class="item button"><a href="#">Log In</a></li>
+        <li class="item button secondary"><a href="#">Sign Up</a></li>
+        <li class="toggle">
+          <a href="#"><i class="fas fa-bars"></i></a>
+        </li>
+      </ul>
+    </nav>
+    <!-- <script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+    $(function() {
+    $(".toggle").on("click", function() {
+        if ($(".item").hasClass("active")) {
+            $(".item").removeClass("active");
+            $(this).find("a").html("<i class='fas fa-bars'></i>");
+        } else {
+            $(".item").addClass("active");
+            $(this).find("a").html("<i class='fas fa-times'></i>");
+        }
+    });
+});
+    </script> -->
+    <script>
+      // Toggle mobile menu
+      const toggle = document.querySelector(".toggle");
+      const menu = document.querySelectorAll(".item");
+      console.log(menu);
+      function toggleMenu() {
+        menu.forEach((item) => {
+          if (item.classList.contains("active")) {
+            item.classList.remove("active");
+            toggle.querySelector("a").innerHTML = '<i class="fas fa-bars"></i>';
+          } else {
+            item.classList.add("active");
+            toggle.querySelector("a").innerHTML =
+              '<i class="fas fa-times"></i>';
+          }
+        });
+      }
+
+      toggle.addEventListener("click", toggleMenu, false);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicios</title>
+  </head>
+  <body>
+    1- Crea un objeto calculadora con los métodos sumar, restar, multiplicar y
+    dividir. Estos métodos esperan dos numeros y devuelven el resultado de la
+    operación. Luego usa el objeto para realizar algunos calculos y enseñalos
+    por la consola. Bonus: el metodo sumar puede admitir una lista infinita de
+    numeros. 2- Crea una función que le pasemos una cadena de caracteres (
+    string ) y nos devuelva el numero de vocales que tiene (suponemos que la
+    cadena no tiene acentos) 3- Crea una función a la que al pasarle una cadena
+    de texto nos la devuelve invertida 4- crea una función que verifique si un
+    texto es un palindromo ej: - esPalindromo('caracol') -> false -
+    esPalindromo('la ruta natural') -> true Nota: - No se tienen en cuenta los
+    espacios (No hace falta usar Foreach, map, filter, reduce) 5- Crea un
+    programa en javascript que emule la máquina de la O.R.A. Se pide al usuario
+    que inserte una cantidad en un promt. ( se supone que en un és número) Si la
+    cantidad es inferior a 30 avisar que no es suficiente y volver a pedir que
+    ingrese la cantidad. Si la cantidad es superior a 210 decir que se ha pasado
+    y volver a pedir la cantidad. Si la cantidad es correcta devolver el tiempo
+    que podrá estar estacionado. Teniendo en cuenta que la fracción corresponde
+    a 1 igual 1 minuto.
+    <script>
+      /*    //Objeto calculadora
+      const calculadora = {
+        sumar: function (...numeros) {
+            let suma = 0;
+            // for(let i = 0; i < numeros.length; i++){
+            //     const num = numeros[i]
+            //     suma += num;
+            // }
+            for(let num of numeros){
+                suma += num;
+            }
+            return suma;
+        },
+        restar: function (a, b) {
+            return a - b;
+        },
+        multiplicar: function (a, b) {
+            return a * b;
+        },
+        dividir: function (a, b) {
+            // if(b === 0){
+            //     return "No puedes dividir entre 0"
+            // }
+            // return a / b;
+            return b === 0 ? "No puedes dividir entre 0" : a / b
+        },
+      };
+
+      console.log(calculadora.sumar(3 , 9 ,3 ,7)); //[3,9,3,7]
+      console.log(calculadora.restar(3 , 9));
+      console.log(calculadora.multiplicar(3 , 9));
+      console.log(calculadora.dividir(3 , 9)); */
+    </script>
+    <script>
+      /* function contarVocales(texto) {
+        const vocales = "aeiouAEIOU";
+        let numVocales = 0;
+
+        for (let i = 0; i < texto.length; i++) {
+          const caracter = texto.charAt(i);
+          for (let j = 0; j < vocales.length; j++) {
+            const vocal = vocales.charAt(j);
+            if (vocal === caracter) {
+              //he encontrado una vocal
+              numVocales++;
+            }
+          }
+          console.log(caracter);
+        }
+
+        return numVocales;
+      }
+
+      console.log(contarVocales("caracol")); */
+    </script>
+    <script>
+      /*       //For...of
+      const semana = ["lunes", "martes", "miercoles"];
+      for (let i = 0; i < semana.length; i++) {
+        let dia = semana[i];
+        console.log(dia);
+      }
+      for (let dia of semana) {
+        console.log(dia);
+      }
+      
+      const vowels = ["a", "e", "i", "o", "u"];
+      function countVowel(str) {
+        let count = 0;
+        for (let letter of str.toLowerCase()) {
+          if (vowels.includes(letter)) {
+            count++;
+          }
+        }
+        return count;
+      }
+
+      console.log(countVowel('murcielago')) */
+    </script>
+    <script>
+      function invertirTexto(str) {
+        return str.split("").reverse().join("-");
+      }
+
+      console.log(invertirTexto("12345"));
+      function invertirArray(arr) {
+        const invertido = [];
+
+        for (let i = 0; i < arr.length; i++) {
+          const item = arr[arr.length - 1 - i];
+          invertido.push(item);
+        }
+        return invertido;
+      }
+
+      console.log(invertirArray([1, 3, 5]));
+    </script>
+  </body>
+</html>

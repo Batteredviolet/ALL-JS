@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- <script>
+      // condicionales
+
+      const puntos = 100;
+
+      if (puntos === 100) {
+        console.log("Es igual");
+      } else {
+        console.log("No es igual");
+      }
+
+      //Otras comparaciones
+      if (puntos !== 100) {
+        console.log("Si, es diferente!");
+      } else {
+        console.log("No, no es diferente");
+      }
+
+      let dinero = 2500;
+      let totalCarrito = 300;
+
+      if (dinero > totalCarrito) {
+        console.log("Pago correcto");
+      } else {
+        console.log("Fondos insuficientes");
+      }
+
+      // si solo hay una sentencia en el condicional,
+      // las llaves se pueden omitir
+      if (dinero > totalCarrito)
+        console.log("Pago correcto");
+      else 
+        console.log("Fondos insuficientes");
+    </script> -->
+    <!-- <script>
+        
+        //Podemos revisar si se cumple más de una condición
+        let rol = 'EDITOR'
+
+        if(rol === 'ADMIN'){
+            console.log('El usuario tiene todos los permisos');
+        }else if(rol === 'EDITOR'){
+            console.log('Solo puedes editar y ver los registros');
+        }else if(rol === 'AUTOR'){
+            console.log("Solo puedes editar tus posts");
+        }else{
+            console.log('Eres un visitante');
+        }
+
+        //switch case
+
+        const metodoDePago = 'patatas';
+
+        switch(metodoDePago) {
+            case 'efectivo':
+                console.log(`Pagaste con ${metodoDePago}`);
+                break;
+
+            case 'targeta':
+                console.log(`Pagaste con ${metodoDePago}`);
+                break;
+
+            case 'cheque':
+                console.log(`Pagaste con ${metodoDePago}`);
+                break;
+
+            default:
+                console.log('Aún no has pagado');
+                break;
+        }
+
+    </script> -->
+    <!-- <script>
+        const usuario = false;
+        const puedePagar = false;
+        
+
+        if(usuario && puedePagar){
+            console.log('Tu pago se ha realizado con exito');
+        }else if(!usuario){
+            console.log('Inicia session primero');
+        }else if(!puedePagar){
+            console.log('No tienes fondos.');
+        }
+        else {
+            console.log('Hay un error en el pago...');
+        }
+    </script> -->
+    <!-- <script>
+        let efectivo = 300;
+        let credito = 400;
+        let disponible = efectivo + credito;
+        let totalCarrito = 701;
+
+        if(efectivo > totalCarrito || credito > totalCarrito){
+            console.log('Puedes pagar en efectivo o con targeta');
+        }else if(disponible >= totalCarrito){
+            console.log('Puedes pagar con ambos');
+        }else{
+            console.log('No puedes pagar');
+        }
+
+        //Ejemplo malo!!
+        const puntos = 30;
+
+        if( puntos > 300){
+            console.log('Buena puntuación...enhorabuena!!');
+        } else if(puntos > 400){
+            console.log('Puntuacion excelente!!!1');
+        }else {
+            console.log('No se que decir, sigue esforzandote...');
+        }
+
+        //operador ternario
+
+    </script> -->
+    <script>
+        //operador ternario
+
+        const autenticado = true;
+        const puedePagar = false;
+
+        let res;
+        if(res){
+            res = 'Estas autenticado';
+        } else {
+            res = 'No tienes permisos';
+        }
+
+        const resultado = autenticado && puedePagar ? 'Estas autenticado' : 'No tienes permisos';
+        console.log(resultado)
+
+        //Se puede anidar
+        console.log(autenticado ? (
+                                    puedePagar ?
+                                     'si puede pagar' 
+                                     : 
+                                     'Esta registrado pero no pued pagar'
+                                    )
+            : 'No esta autenticado');
+    </script>
+</body>
+</html>
