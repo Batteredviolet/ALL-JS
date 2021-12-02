@@ -1,0 +1,1 @@
+Este texto ha sido cargado de forma asíncrona con el objeto XmlHttpRequest
